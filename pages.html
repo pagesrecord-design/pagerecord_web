@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상세페이지 제작 - Creative Design Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        .main-font {
+            font-family: 'Paperozi', sans-serif;
+            font-weight: 800;
+        }
+
+        .sub-font {
+            font-family: 'Paperozi', sans-serif;
+            font-weight: 400;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 2rem 1.5rem 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background-color: #8B5CF6;
+            color: white;
+        }
+
+        .filter-btn:not(.active) {
+            background-color: white;
+            color: #374151;
+        }
+
+        .filter-btn:not(.active):hover {
+            background-color: #F3F4F6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- 네비게이션 -->
+    <nav class="bg-white shadow-sm border-b border-gray-100">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html">
+                        <img src="llogo.png" alt="Creative Design Studio" class="h-12 w-auto">
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-300 sub-font">홈</a>
+                    <a href="websites.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-300 sub-font">웹사이트 제작</a>
+                    <a href="pages.html" class="text-purple-600 font-semibold sub-font">상세페이지 제작</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-300 sub-font">견적문의</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-12">
+        <!-- 메인 히어로 섹션 -->
+        <div class="text-center mb-16">
+            <h1 class="text-5xl font-bold text-gray-900 mb-6 leading-tight main-font">
+                최상의 <span class="text-purple-600">퀄리티</span>와 빠른 결과물로 보답하겠습니다
+            </h1>
+            <p class="text-xl text-gray-600 mb-8 leading-relaxed sub-font">
+                페이지레코드와 함께 하시면<br>
+                <span class="text-purple-600 font-semibold">일주일 뒤, 이 모든게 여러분의 상세페이지입니다.</span>
+            </p>
+        </div>
+
+        <!-- 필터 버튼들 -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <button class="filter-btn active px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300" data-filter="all">
+                전체
+            </button>
+            <button class="filter-btn px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300" data-filter="product">
+                제품 상세페이지
+            </button>
+            <button class="filter-btn px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300" data-filter="service">
+                서비스 소개
+            </button>
+            <button class="filter-btn px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300" data-filter="event">
+                이벤트 페이지
+            </button>
+            <button class="filter-btn px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300" data-filter="brand">
+                브랜드 스토리
+            </button>
+            <button class="filter-btn px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300" data-filter="campaign">
+                캠페인 페이지
+            </button>
+            <button class="filter-btn px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300" data-filter="portfolio">
+                포트폴리오
+            </button>
+        </div>
+
+        <!-- 포트폴리오 갤러리 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- 포트폴리오 아이템 1 -->
+            <div class="portfolio-item product" data-category="product">
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500&h=300&fit=crop" alt="제품 상세페이지" class="w-full h-64 object-cover">
+                <div class="portfolio-overlay">
+                    <h3 class="text-xl font-bold mb-2 main-font">스마트폰 제품 상세페이지</h3>
+                    <p class="text-sm sub-font">최신 기술과 디자인을 강조한 제품 소개 페이지</p>
+                </div>
+            </div>
+
+            <!-- 포트폴리오 아이템 2 -->
+            <div class="portfolio-item service" data-category="service">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=500&h=300&fit=crop" alt="서비스 소개" class="w-full h-64 object-cover">
+                <div class="portfolio-overlay">
+                    <h3 class="text-xl font-bold mb-2 main-font">클라우드 서비스 소개</h3>
+                    <p class="text-sm sub-font">기업용 클라우드 솔루션 서비스 상세 소개</p>
+                </div>
+            </div>
+
+            <!-- 포트폴리오 아이템 3 -->
+            <div class="portfolio-item event" data-category="event">
+                <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=500&h=300&fit=crop" alt="이벤트 페이지" class="w-full h-64 object-cover">
+                <div class="portfolio-overlay">
+                    <h3 class="text-xl font-bold mb-2 main-font">할인 이벤트 페이지</h3>
+                    <p class="text-sm sub-font">높은 전환율을 위한 특가 이벤트 상세페이지</p>
+                </div>
+            </div>
+
+            <!-- 포트폴리오 아이템 4 -->
+            <div class="portfolio-item brand" data-category="brand">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=300&fit=crop" alt="브랜드 스토리" class="w-full h-64 object-cover">
+                <div class="portfolio-overlay">
+                    <h3 class="text-xl font-bold mb-2 main-font">브랜드 스토리 페이지</h3>
+                    <p class="text-sm sub-font">브랜드의 철학과 가치를 전달하는 스토리텔링</p>
+                </div>
+            </div>
+
+            <!-- 포트폴리오 아이템 5 -->
+            <div class="portfolio-item campaign" data-category="campaign">
+                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&h=300&fit=crop" alt="캠페인 페이지" class="w-full h-64 object-cover">
+                <div class="portfolio-overlay">
+                    <h3 class="text-xl font-bold mb-2 main-font">신제품 런칭 캠페인</h3>
+                    <p class="text-sm sub-font">신제품 출시를 위한 마케팅 캠페인 페이지</p>
+                </div>
+            </div>
+
+            <!-- 포트폴리오 아이템 6 -->
+            <div class="portfolio-item portfolio" data-category="portfolio">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop" alt="포트폴리오" class="w-full h-64 object-cover">
+                <div class="portfolio-overlay">
+                    <h3 class="text-xl font-bold mb-2 main-font">디자이너 포트폴리오</h3>
+                    <p class="text-sm sub-font">창의적인 디자인 작업물을 소개하는 포트폴리오</p>
+                </div>
+            </div>
+
+            <!-- 포트폴리오 아이템 7 -->
+            <div class="portfolio-item product" data-category="product">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop" alt="제품 상세페이지" class="w-full h-64 object-cover">
+                <div class="portfolio-overlay">
+                    <h3 class="text-xl font-bold mb-2 main-font">패션 제품 상세페이지</h3>
+                    <p class="text-sm sub-font">트렌디한 패션 아이템의 매력을 전달하는 상세페이지</p>
+                </div>
+            </div>
+
+            <!-- 포트폴리오 아이템 8 -->
+            <div class="portfolio-item service" data-category="service">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=300&fit=crop" alt="서비스 소개" class="w-full h-64 object-cover">
+                <div class="portfolio-overlay">
+                    <h3 class="text-xl font-bold mb-2 main-font">금융 서비스 소개</h3>
+                    <p class="text-sm sub-font">안전하고 신뢰할 수 있는 금융 서비스 상세 소개</p>
+                </div>
+            </div>
+
+            <!-- 포트폴리오 아이템 9 -->
+            <div class="portfolio-item event" data-category="event">
+                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=500&h=300&fit=crop" alt="이벤트 페이지" class="w-full h-64 object-cover">
+                <div class="portfolio-overlay">
+                    <h3 class="text-xl font-bold mb-2 main-font">시즌 이벤트 페이지</h3>
+                    <p class="text-sm sub-font">계절별 특별 이벤트를 위한 매력적인 상세페이지</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <div class="text-center mb-4">
+                    <div class="text-2xl font-bold text-white main-font">Creative Design Studio</div>
+                </div>
+                <p class="text-gray-400 mb-6 sub-font">웹사이트 & 상세페이지 디자인 전문</p>
+                <div class="flex justify-center space-x-8 mb-6">
+                    <a href="websites.html" class="text-gray-400 hover:text-white transition-colors duration-300 sub-font">웹사이트 제작</a>
+                    <a href="pages.html" class="text-gray-400 hover:text-white transition-colors duration-300 sub-font">상세페이지 제작</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-300 sub-font">CONTACT</a>
+                </div>
+                <p class="text-gray-500 text-sm sub-font">© 2024 Creative Design Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 필터 기능
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // 모든 버튼에서 active 클래스 제거
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // 클릭된 버튼에 active 클래스 추가
+                    this.classList.add('active');
+
+                    const filter = this.getAttribute('data-filter');
+
+                    portfolioItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

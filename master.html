@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오 사이트</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Paperozi';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        .hero-bg {
+            background-image: url('hero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .main-font {
+            font-family: 'Paperozi', sans-serif;
+            font-weight: 800;
+        }
+
+        .sub-font {
+            font-family: 'Paperozi', sans-serif;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-12">
+        <!-- 배너 카드 1: 배경 이미지가 있는 카드 -->
+        <div class="mb-12">
+            <div class="hero-bg rounded-2xl shadow-xl overflow-hidden relative">
+                <!-- 오버레이 -->
+                <div class="absolute inset-0 bg-blue-900 bg-opacity-60"></div>
+                
+                <!-- 카드 내용 -->
+                <div class="relative z-10 p-12 text-white">
+                    <div class="max-w-2xl">
+                        <!-- 뱃지 -->
+                        <div class="inline-block text-white text-sm font-semibold mb-6 pb-2 border-b-2 border-blue-300">
+                            새로운 프로젝트
+                        </div>
+                        
+                        <!-- 하이라이트 -->
+                        <h1 class="text-5xl font-bold mb-6 leading-tight main-font">
+                            혁신적인 <span class="text-blue-300">디지털 솔루션</span>을 만나보세요
+                        </h1>
+                        
+                        <!-- 본문 텍스트 -->
+                        <p class="text-xl text-gray-200 mb-8 leading-relaxed sub-font">
+                            최신 기술과 창의적인 아이디어로 고객의 비즈니스 성장을 돕는 
+                            맞춤형 웹 애플리케이션을 개발합니다. 사용자 경험을 최우선으로 하는 
+                            솔루션을 제공합니다.
+                        </p>
+                        
+                        <!-- 버튼들 -->
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button class="bg-white text-blue-600 hover:bg-gray-50 px-8 py-4 rounded-[200px] font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                                프로젝트 보기
+                            </button>
+                            <button class="bg-white text-black hover:bg-gray-50 px-8 py-4 rounded-[200px] font-semibold text-lg transition-all duration-300">
+                                더 알아보기
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 배너 카드 2: 화이트 배경 카드 -->
+        <div class="mb-12">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+                <div class="p-12">
+                    <div class="max-w-2xl">
+                        <!-- 뱃지 -->
+                        <div class="inline-block text-gray-700 text-sm font-semibold mb-6 pb-2 border-b-2 border-blue-600">
+                            포트폴리오
+                        </div>
+                        
+                        <!-- 하이라이트 -->
+                        <h2 class="text-4xl font-bold text-gray-900 mb-6 leading-tight main-font">
+                            <span class="text-blue-600">전문성</span>과 <span class="text-blue-600">경험</span>을 바탕으로
+                        </h2>
+                        
+                        <!-- 본문 텍스트 -->
+                        <p class="text-lg text-gray-600 mb-8 leading-relaxed sub-font">
+                            다양한 프로젝트 경험을 통해 축적된 노하우와 기술력을 바탕으로 
+                            고품질의 웹 서비스를 제공합니다. 프론트엔드부터 백엔드까지 
+                            풀스택 개발이 가능한 전문성을 보유하고 있습니다.
+                        </p>
+                        
+                        <!-- 버튼들 -->
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button class="bg-white text-blue-600 hover:bg-gray-50 px-8 py-4 rounded-[200px] font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                                포트폴리오 보기
+                            </button>
+                            <button class="bg-white text-black hover:bg-gray-50 px-8 py-4 rounded-[200px] font-semibold text-lg transition-all duration-300">
+                                연락하기
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
